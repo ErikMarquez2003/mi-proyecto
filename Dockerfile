@@ -39,8 +39,15 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 # Dar permisos correctos a las carpetas de almacenamiento
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Crear un archivo .env de producción y limpiar caché para que lea el APP_KEY de Render
+# Crear el archivo .env e inyectar tu clave real directamente
 RUN cp .env.example .env || true
+RUN sed -i 's|APP_KEY=.*|APP_KEY=base64:p/yIcGXQcfwtue/qa9YRnHrARKDwwTT/ns+I=|' .env
+
+# Limpiar la caché para que asimile la clave
 RUN php artisan config:clear
+
+# Forzar a Laravel a mostrar el error real en la página web por si acaso
+ENV APP_DEBUG=true
+ENV APP_ENV=production
 
 EXPOSE 80
