@@ -34,4 +34,13 @@ RUN composer install --no-interaction --optimize-autoloader --no-dev
 # Dar permisos correctos a las carpetas de almacenamiento
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
+# ... (todo lo anterior se queda igual) ...
+
+# Dar permisos correctos a las carpetas de almacenamiento
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Crear un archivo .env de producción y limpiar caché para que lea el APP_KEY de Render
+RUN cp .env.example .env || true
+RUN php artisan config:clear
+
 EXPOSE 80
