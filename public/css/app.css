@@ -1,0 +1,509 @@
+/* ============================================================
+   MARQUEZ CYBERVANGUARD - Direccion de Defensa Digital Proactiva
+   Identidad visual institucional
+   ============================================================ */
+
+:root {
+  --azul-profundo: #0B2545;
+  --azul-medio: #13386B;
+  --azul-acento: #1C5D99;
+  --rojo-boliviano: #C1272D;
+  --dorado: #D9A82E;
+  --fondo: #F6F7FA;
+  --fondo-card: #FFFFFF;
+  --texto-principal: #1A2332;
+  --texto-secundario: #5B6B82;
+  --borde: #DDE3EC;
+  --verde-estado: #1E8E5A;
+
+  --fuente-display: "Liberation Sans", "Arial Narrow", Arial, sans-serif;
+  --fuente-cuerpo: "Liberation Sans", Arial, Helvetica, sans-serif;
+  --fuente-mono: "Liberation Mono", "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente-cuerpo);
+  background: var(--fondo);
+  color: var(--texto-principal);
+  line-height: 1.55;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- BARRA SUPERIOR INSTITUCIONAL ---------- */
+.top-strip {
+  background: var(--azul-profundo);
+  color: #DCE6F2;
+  font-size: 12.5px;
+  padding: 6px 0;
+}
+.top-strip .container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.top-strip .bandera {
+  display: inline-flex;
+  gap: 2px;
+  width: 18px;
+  height: 12px;
+  border-radius: 1px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.top-strip .bandera span { flex: 1; }
+.top-strip .b-rojo { background: #D52B1E; }
+.top-strip .b-amar { background: #F4E400; }
+.top-strip .b-verde { background: #007934; }
+
+/* ---------- HEADER ---------- */
+header.site-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--borde);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 0 rgba(11,37,69,0.04);
+}
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, var(--azul-profundo), var(--azul-acento));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.brand-mark svg { width: 26px; height: 26px; }
+.brand-text .brand-name {
+  font-family: var(--fuente-display);
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: 0.2px;
+  color: var(--azul-profundo);
+  line-height: 1.1;
+}
+.brand-text .brand-sub {
+  font-size: 11.5px;
+  color: var(--texto-secundario);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+nav.main-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+nav.main-nav a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--texto-principal);
+  padding: 9px 14px;
+  border-radius: 7px;
+  transition: background .15s, color .15s;
+}
+nav.main-nav a:hover { background: #EEF2F8; color: var(--azul-acento); }
+nav.main-nav a.activo { color: var(--azul-profundo); background: #E7EDF6; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .15s;
+}
+.btn-primario {
+  background: var(--rojo-boliviano);
+  color: #fff;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+}
+.btn-primario:hover { background: #A8201F; transform: translateY(-1px); }
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--azul-profundo);
+  color: var(--azul-profundo);
+}
+.btn-outline:hover { background: var(--azul-profundo); color: #fff; }
+.btn-ghost {
+  background: #fff;
+  border: 1.5px solid var(--borde);
+  color: var(--texto-principal);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  background: radial-gradient(1100px 500px at 80% -10%, #163B6B 0%, var(--azul-profundo) 55%, #081A33 100%);
+  color: #fff;
+  padding: 76px 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 38px 38px;
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  background: rgba(217,168,46,0.12);
+  border: 1px solid rgba(217,168,46,0.35);
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.eyebrow .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--verde-estado);
+  box-shadow: 0 0 0 3px rgba(30,142,90,0.25);
+}
+.hero h1 {
+  font-family: var(--fuente-display);
+  font-size: 42px;
+  line-height: 1.12;
+  font-weight: 800;
+  margin: 0 0 18px;
+  letter-spacing: -0.4px;
+}
+.hero h1 span { color: var(--dorado); }
+.hero p.lead {
+  font-size: 16.5px;
+  color: #C7D5E8;
+  max-width: 520px;
+  margin: 0 0 30px;
+}
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+.hero-metrics {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.hero-metric .num {
+  font-family: var(--fuente-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+}
+.hero-metric .lbl {
+  font-size: 12px;
+  color: #9FB3CC;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ---------- DIAGRAMA DE FLUJO (signature element) ---------- */
+.flow-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 16px;
+  padding: 22px;
+  backdrop-filter: blur(2px);
+}
+.flow-card h3 {
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9FB3CC;
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+.flow-steps { display: flex; flex-direction: column; gap: 0; }
+.flow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 13px 4px;
+  position: relative;
+}
+.flow-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 44px;
+  bottom: -4px;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(217,168,46,.55), rgba(217,168,46,.1));
+}
+.flow-num {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, var(--dorado), #B8861F);
+  color: #1A1300;
+  font-weight: 800;
+  font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.flow-text .t1 { font-weight: 700; font-size: 14.5px; color: #fff; margin-bottom: 2px; }
+.flow-text .t2 { font-size: 12.5px; color: #A9BBD2; }
+
+/* ---------- SECCIONES GENERALES ---------- */
+section.bloque { padding: 64px 0; }
+section.bloque.alt { background: #fff; border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde); }
+
+.section-head { max-width: 680px; margin: 0 auto 40px; text-align: center; }
+.section-head .tag {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+  color: var(--rojo-boliviano); margin-bottom: 10px; display: block;
+}
+.section-head h2 {
+  font-family: var(--fuente-display);
+  font-size: 30px; font-weight: 800; color: var(--azul-profundo);
+  margin: 0 0 10px; letter-spacing: -0.3px;
+}
+.section-head p { color: var(--texto-secundario); font-size: 15px; margin: 0; }
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+.card {
+  background: var(--fondo-card);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  padding: 26px;
+}
+.card .icon-box {
+  width: 46px; height: 46px;
+  border-radius: 10px;
+  background: #E7EDF6;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.card .icon-box svg { width: 24px; height: 24px; stroke: var(--azul-profundo); }
+.card h3 { font-size: 16.5px; font-weight: 700; color: var(--azul-profundo); margin: 0 0 8px; }
+.card p { font-size: 14px; color: var(--texto-secundario); margin: 0; }
+
+/* ---------- BREADCRUMB / PAGE HEADER (subpáginas) ---------- */
+.page-header {
+  background: var(--azul-profundo);
+  color: #fff;
+  padding: 40px 0 34px;
+}
+.page-header .crumbs {
+  font-size: 12.5px; color: #9FB3CC; margin-bottom: 10px;
+}
+.page-header .crumbs a { color: #C7D5E8; }
+.page-header .crumbs a:hover { text-decoration: underline; }
+.page-header h1 {
+  font-family: var(--fuente-display);
+  font-size: 28px; font-weight: 800; margin: 0;
+}
+.page-header p { color: #C7D5E8; margin: 10px 0 0; max-width: 640px; font-size: 14.5px; }
+
+/* ---------- ORGANIGRAMA ---------- */
+.org-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 30px 10px;
+  overflow-x: auto;
+}
+.org-node {
+  background: #fff;
+  border: 1.5px solid var(--azul-profundo);
+  border-radius: 10px;
+  padding: 12px 18px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--azul-profundo);
+  min-width: 190px;
+  box-shadow: 0 2px 4px rgba(11,37,69,0.06);
+}
+.org-node.nivel-1 { background: var(--azul-profundo); color: #fff; border-color: var(--azul-profundo); }
+.org-node .sub { display: block; font-size: 11px; font-weight: 500; margin-top: 3px; opacity: .8; }
+.org-connector-v { width: 2px; height: 26px; background: var(--azul-acento); }
+.org-connector-h { height: 2px; background: var(--azul-acento); }
+.org-row { display: flex; gap: 36px; flex-wrap: nowrap; }
+.org-branch { display: flex; flex-direction: column; align-items: center; }
+
+/* ---------- TABLAS (MOF / MAPRO) ---------- */
+.tabla-doc { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 18px 0; }
+.tabla-doc th {
+  background: var(--azul-profundo); color: #fff; text-align: left;
+  padding: 11px 14px; font-weight: 700; font-size: 12.5px;
+  text-transform: uppercase; letter-spacing: 0.3px;
+}
+.tabla-doc td { padding: 11px 14px; border-bottom: 1px solid var(--borde); vertical-align: top; }
+.tabla-doc tr:nth-child(even) td { background: #FAFBFD; }
+.tabla-doc tr:hover td { background: #EEF2F8; }
+
+.ficha-puesto {
+  background: #fff; border: 1px solid var(--borde); border-radius: 12px;
+  padding: 24px; margin-bottom: 22px;
+}
+.ficha-puesto .ficha-head {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  border-bottom: 1px solid var(--borde); padding-bottom: 14px; margin-bottom: 14px;
+  flex-wrap: wrap; gap: 8px;
+}
+.ficha-puesto .cargo { font-size: 17px; font-weight: 800; color: var(--azul-profundo); }
+.ficha-puesto .nivel-badge {
+  background: #E7EDF6; color: var(--azul-acento); font-size: 11.5px; font-weight: 700;
+  padding: 4px 10px; border-radius: 999px; text-transform: uppercase;
+}
+.ficha-puesto h4 { font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.4px; color: var(--texto-secundario); margin: 16px 0 8px; }
+.ficha-puesto ul { margin: 0; padding-left: 18px; font-size: 14px; color: var(--texto-principal); }
+.ficha-puesto li { margin-bottom: 6px; }
+
+/* ---------- PROCEDIMIENTOS (MAPRO) ---------- */
+.procedimiento {
+  background: #fff; border: 1px solid var(--borde); border-radius: 12px;
+  padding: 24px; margin-bottom: 20px;
+}
+.procedimiento-head {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.procedimiento-codigo {
+  background: var(--rojo-boliviano); color: #fff; font-size: 12px; font-weight: 800;
+  padding: 5px 11px; border-radius: 6px; letter-spacing: 0.3px;
+}
+.procedimiento h3 { font-size: 16px; font-weight: 700; color: var(--azul-profundo); margin: 0; }
+.paso-lista { list-style: none; margin: 0; padding: 0; counter-reset: paso; }
+.paso-lista li {
+  counter-increment: paso;
+  position: relative;
+  padding: 10px 0 10px 38px;
+  font-size: 14px;
+  border-bottom: 1px dashed var(--borde);
+}
+.paso-lista li:last-child { border-bottom: none; }
+.paso-lista li::before {
+  content: counter(paso);
+  position: absolute; left: 0; top: 8px;
+  width: 24px; height: 24px;
+  background: var(--azul-acento); color: #fff;
+  font-size: 12px; font-weight: 800;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.paso-lista li strong { color: var(--azul-profundo); }
+
+/* ---------- FORMULARIOS (trámites / contacto) ---------- */
+.form-box {
+  background: #fff; border: 1px solid var(--borde); border-radius: 14px; padding: 30px;
+}
+.form-row { margin-bottom: 18px; }
+.form-row label {
+  display: block; font-size: 13px; font-weight: 700; color: var(--texto-principal);
+  margin-bottom: 6px;
+}
+.form-row input, .form-row select, .form-row textarea {
+  width: 100%; padding: 11px 13px; border: 1.5px solid var(--borde); border-radius: 8px;
+  font-size: 14px; font-family: var(--fuente-cuerpo); color: var(--texto-principal);
+  background: #FAFBFD;
+}
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+  outline: none; border-color: var(--azul-acento); background: #fff;
+}
+.form-hint { font-size: 12px; color: var(--texto-secundario); margin-top: 5px; }
+
+.alert-success {
+  background: #E9F7EF; border: 1px solid #BCE6CE; color: #1E8E5A;
+  padding: 14px 18px; border-radius: 10px; font-size: 14px; font-weight: 600;
+  margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+}
+
+/* ---------- LOGIN ---------- */
+.login-wrap {
+  min-height: calc(100vh - 64px);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--azul-profundo);
+  padding: 40px 20px;
+}
+.login-card {
+  background: #fff; border-radius: 16px; padding: 38px 36px; width: 100%; max-width: 400px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+.login-card .brand { justify-content: center; margin-bottom: 22px; }
+.login-card h2 { text-align: center; font-size: 20px; color: var(--azul-profundo); margin: 0 0 6px; }
+.login-card p.sub { text-align: center; color: var(--texto-secundario); font-size: 13.5px; margin: 0 0 24px; }
+.login-card .btn-primario { width: 100%; justify-content: center; padding: 12px; }
+
+/* ---------- FOOTER ---------- */
+footer.site-footer {
+  background: var(--azul-profundo);
+  color: #B9CBE0;
+  padding: 50px 0 24px;
+  margin-top: 40px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px;
+  padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.footer-grid h4 { color: #fff; font-size: 13.5px; margin: 0 0 14px; }
+.footer-grid ul { list-style: none; margin: 0; padding: 0; }
+.footer-grid li { margin-bottom: 9px; font-size: 13.5px; }
+.footer-grid a:hover { color: #fff; }
+.footer-bottom {
+  display: flex; justify-content: space-between; padding-top: 20px; font-size: 12.5px;
+  color: #8AA0BC; flex-wrap: wrap; gap: 8px;
+}
+
+/* ---------- UTILIDADES ---------- */
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 700; }
+.badge-azul { background: #E7EDF6; color: var(--azul-acento); }
+.badge-rojo { background: #FBE7E7; color: var(--rojo-boliviano); }
+.badge-verde { background: #E4F4EA; color: var(--verde-estado); }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .grid-3, .grid-2, .grid-4 { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  nav.main-nav { display: none; }
+}
